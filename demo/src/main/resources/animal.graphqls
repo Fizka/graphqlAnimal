@@ -1,0 +1,20 @@
+scalar Long
+
+type Animal {
+	id: ID!
+	name: String!
+	owner: Owner
+}
+
+# Root
+type Query {
+	findAllAnimals: [Animal]!
+	countAnimals: Long!
+}
+
+# Root
+type Mutation {
+	createAnimal(name: String!, ownerId: Long): Animal!
+	updateAnimal(id: ID!, name: String): Animal!
+    deleteAnimal(id: ID!): Boolean
+}
